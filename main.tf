@@ -2,22 +2,23 @@
 data "template_file" "userdata" {
   template = file(var.user_data_file)
 }
-
+/*
 resource "aws_key_pair" "ssm" {
   key_name   = var.key_name
   public_key = var.public_key_path
 }
-
+*/
+/*
 resource "local_file" "ssh_key" {
   filename = var.public_key_path
   content  = aws_key_pair.ssm.public_key
 }
-
+*/
 resource "aws_instance" "ssm" {
   count                  = var.instance_count
   ami                    = var.ami_id
   instance_type          = var.instance_type
-  key_name               = aws_key_pair.ssm.key_name
+  key_name               = "jenkins-key"
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [aws_security_group.ssm_sg.id]
   user_data              = data.template_file.userdata.rendered

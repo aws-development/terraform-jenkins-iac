@@ -99,12 +99,12 @@ variable "instance_tags" {
 
 variable "public_key_path" {
   type    = string
-  default = "C:\Users\ravikumar4\Documents\CONTAINER-LFC-WIZ-POC-1\jenkins-key.pub"
+  default = "~/.ssh/id_rsa.pub"
 }
 
 variable "private_key_path" {
   type    = string
-  default = "C:\Users\ravikumar4\Documents\CONTAINER-LFC-WIZ-POC-1\jenkins-key.ppk"
+  default = "~/.ssh/id_rsa"
 }
 
 variable "features" {
