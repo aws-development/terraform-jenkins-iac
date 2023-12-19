@@ -81,7 +81,7 @@ resource "aws_security_group" "ssm_sg" {
     to_port   = 443
     protocol  = "tcp"
     #cidr_blocks = ["49.36.144.255/32"]
-    cidr_blocks = ["24.239.150.16/0"]
+    cidr_blocks = ["24.239.150.16/32"]
   }
 
 }
