@@ -44,7 +44,7 @@ resource "aws_instance" "ssm" {
 resource "aws_security_group" "ssm_sg" {
   name_prefix = "jenkins-sg"
   description = "jenkins security group"
-
+  vpc_id = "vpc-056f6058409ea6634"
   ingress {
     from_port   = 22
     to_port     = 22
